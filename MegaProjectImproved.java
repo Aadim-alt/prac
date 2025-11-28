@@ -9,11 +9,11 @@ public class MegaProjectImproved
         String userName, password;
         userName = "";
         password = "";
-        double total;
+        double total = 0;
         double finalPrice = 0;
         double discountPrice = 0;
         Random random = new Random();
-        int luckyNum = random.nextInt(1,5);
+        
         double priceAfter = 0;
         do{
             System.out.print("Enter UserName: ");
@@ -63,29 +63,36 @@ public class MegaProjectImproved
                 {
                     discountPrice = finalPrice - (25.0/100.0)*finalPrice;
                     System.out.println("You got 25% Discount.Your price after discount is: "+ discountPrice);
+                    priceAfter = discountPrice;
                 }
                 else if(finalPrice>5000)
                 {
                     discountPrice = finalPrice - (20.0/100.0)*finalPrice;
                     System.out.println("You got 20% Discount.Your price after discount is: "+ discountPrice);
+                    priceAfter = discountPrice;
                 }
                 else if(finalPrice > 3000)
                 {
                     discountPrice = finalPrice - (15.0/100.0)*finalPrice;
                     System.out.println("You got 15% Discount.Your price after discount is: "+ discountPrice);
+                    priceAfter = discountPrice;
                 }
                 else if(finalPrice>1000)
                 {
                     discountPrice = finalPrice - (10.0/100.0)*finalPrice;
                     System.out.println("You got 10% Discount.Your price after discount is: "+ discountPrice);
+                    priceAfter = discountPrice;
                 }
                 else{
                     discountPrice = finalPrice;
                     System.out.println("You got 0% Discount.Your price after 0 discount is Same. That is: "+ discountPrice);
+                    priceAfter = discountPrice;
                 }
             }
             case(4) ->
             {
+                 int luckyNum = random.nextInt(1,5);
+                 if (discountPrice == 0){discountPrice = finalPrice;}
                  if(luckyNum == 1)
                  {
                     priceAfter = discountPrice - 200;
@@ -105,7 +112,7 @@ public class MegaProjectImproved
                    
                 else if(luckyNum == 4)
                 {
-                    priceAfter = discountPrice - (5/100)*discountPrice;
+                    priceAfter = discountPrice - (5.0/100.0)*discountPrice;
                     System.out.println("Your Price is After lucky Discount is"+ priceAfter);
                     }
             }
@@ -115,6 +122,7 @@ public class MegaProjectImproved
             
             
         }while(option != 5);
+        if (priceAfter==0){priceAfter = finalPrice;}
         System.out.printf("Username = %s \n Final Price = %.2f",userName,priceAfter);
     }
 }
