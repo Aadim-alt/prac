@@ -5,7 +5,7 @@
 **Goal:** Software Developer | Cybersecurity | Trading Automation
 
 ## About Me
-19-year-old BSc Computing student learning to code. Building projects daily, documenting my journey from beginner to professional developer.
+18-year-old BSc Computing student learning to code. Building projects daily, documenting my journey from beginner to professional developer.
 
 ## Projects
 
